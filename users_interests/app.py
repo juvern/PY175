@@ -26,7 +26,8 @@ def user(name):
     return render_template('user.html',
                             name=name,
                             result=result,
-                            data=g.data)
+                            data=g.data,
+                            total_interests=total_interests())
 
 
 def total_interests():

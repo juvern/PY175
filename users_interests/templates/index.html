@@ -1,12 +1,15 @@
-<h1>User Directory</h1>
+{% extends "layout.html" %}
 
+{% block content %}
+<h1>User Directory</h1>
 <ul>
 	{% for user, _ in data.items() %}
 	<li>
-		<a href="{{ url_for('user',name=user) }}">{{ user | capitalize }}</a>
+		<a href="{{ url_for('user', name=user) }}">{{ user | capitalize }}</a>
 	</li>
 	{% endfor %}
 </ul>
 
 
-<p>There are {{ data | length }} users with a total of {{ total_interests }} interests.</p>
+
+{% endblock %}

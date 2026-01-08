@@ -1,3 +1,6 @@
+{% extends "layout.html" %}
+
+{% block content %}
 <h1>{{ name | capitalize }}</h1>
 
 <h3>Nice to meet you</h3>
@@ -14,4 +17,6 @@
 {% endfor %}
 </p>
 
-<p><a href="/">Home</p>
+<p><a href="/">Home</a></p>
+{% endblock %}
+

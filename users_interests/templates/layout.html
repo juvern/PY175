@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Directory</title>
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>There are {{ data | length }} users with a total of {{ total_interests }} interests.</p>
+    </footer>
+</body>
+</html>

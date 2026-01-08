@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2 class="content-subhead">Search</h2>
+
+  <form action="{{ url_for('search') }}" method="get">
+    <input name="query" value="{{ query }}" />
+    <button type="submit">Search</button>
+  </form>
+
+  
+
+  {% if query %}
+  {% if results %}
+
+  <h2 class="content-subhead">Results for '{{ query }}' </h2>
+    <ul>
+    {% for chapter_name, paragraph in results.items() %}
+      <li>
+        <a href="#" class="pure-menu-link">{{ chapter_name }}</a>
+        <ul>
+          {% for id_num, line in paragraph %}
+          <li>
+            <a href="{{ url_for('chapter', page_num=id_num) }}#paragraph" class="pure-menu-link">{{ line }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+   {% endfor %}
+  </ul>
+
+  {% else %} 
+    <p>Sorry, no matches were found.</p>
+
+{% endif %}
+{% endif %}
+
+{% endblock %}  
+

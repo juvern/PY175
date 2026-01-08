@@ -1,0 +1,17 @@
+<h1>{{ name | capitalize }}</h1>
+
+<h3>Nice to meet you</h3>
+
+<p>Email address: {{ result.email }} </p>
+<p>Interests: {{ result.interests | join(', ') }}</p>
+
+
+<p>
+{% for user, _ in data.items() %}
+	{% if user != name %}
+		<a href="{{ url_for('user', name=user) }}">{{ user | capitalize }}</a>
+	{% endif %}
+{% endfor %}
+</p>
+
+<p><a href="/">Home</p>

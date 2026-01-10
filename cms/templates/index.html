@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>File-Based CMS</h1>
+<ul>
+  {% for file in files %}
+  <li>
+  	<a href="{{ url_for('open_file', filename=file) }}">{{ file }}</a>
+  	<a href="{{ url_for('edit_file', filename=file) }}">edit</a>
+  	<form class='inline' method='post' action="{{ url_for('delete_file', filename=file) }}">
+  		<button type='submit'>Delete</button>
+  	</form>
+  </li>
+  {% endfor %}
+</ul>
+
+<a href="{{ url_for('new_file') }}">New Document</a>
+
+	{% if session.username %}
+	<form method="post" action="{{ url_for('signout') }}">
+		<p class='user-status'>
+			Signed in as {{ session.username }}.
+			<button type='submit'>Sign Out</button>
+			<a href="{{ url_for('signin') }}">Sign In</a>
+		</p>
+	</form>
+	{% else %}
+		<p class='user-status'><a href="{{ url_for('show_signin_form') }}">Sign In</a></p>
+
+	{% endif %}
+{% endblock %}

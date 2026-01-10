@@ -1,0 +1,3 @@
+post: The POST method; form data sent as the request body.
+get (default): The GET; form data appended to the action URL with a ? separator. Use this method when the form has no side effects.
+dialog: When the form is inside a <dialog>, closes the dialog and causes a submit event to be fired on submission, without submitting data or clearing the form.

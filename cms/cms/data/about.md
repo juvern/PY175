@@ -1,0 +1,3 @@
+# Python is...
+
+A dynamic, *open source* programmming language with a focus on _simplicity_ and _productivit_. It has an elegant syntax that is natrual to read and easy to write.
